@@ -13,6 +13,14 @@ set_contracts(){
 set_contracts c1
 set_contracts c2
 
+
+set_random_contracts(){
+    $cleos2 set contract ${contract_rand} ../random -x 1000 -p ${contract_rand}
+}
+set_random_contracts c2
+
+
+
 init_contracts(){
     cleos=cleos1 && if [ "$1" == "c2" ];then cleos=cleos2 ;fi
 
@@ -104,7 +112,9 @@ get_account(){
 #    get_account ibc2token555
 #    get_account ibc2chain555
 
-
+generate_random(){
+    $cleos2 push action ibc2random22 generate '[{"loop":1, "num":1}]' -p ibc2random22
+}
 
 
 transfer(){
@@ -178,4 +188,30 @@ huge_pressure(){
     for i in `seq 200`; do withdraw  ; done >/dev/null 2>&1  &
 
 }
+
+
+
+
+##   专项测试
+# 批量正向
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

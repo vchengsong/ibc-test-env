@@ -23,10 +23,10 @@ EOF
 read -d '' confignode1 << EOF
 http-server-address = 127.0.0.1:28888
 p2p-peer-address = localhost:9800
-#p2p-peer-address = localhost:9801
-#p2p-peer-address = localhost:9802
-#p2p-peer-address = localhost:9803
-#p2p-peer-address = localhost:9804
+p2p-peer-address = localhost:9801
+p2p-peer-address = localhost:9802
+p2p-peer-address = localhost:9803
+p2p-peer-address = localhost:9804
 p2p-listen-endpoint = 0.0.0.0:19770
 
 ibc-listen-endpoint = 0.0.0.0:6001
@@ -40,10 +40,10 @@ EOF
 read -d '' confignode2 << EOF
 http-server-address = 127.0.0.1:28889
 p2p-peer-address = localhost:9900
-#p2p-peer-address = localhost:9901
-#p2p-peer-address = localhost:9902
-#p2p-peer-address = localhost:9903
-#p2p-peer-address = localhost:9904
+p2p-peer-address = localhost:9901
+p2p-peer-address = localhost:9902
+p2p-peer-address = localhost:9903
+p2p-peer-address = localhost:9904
 p2p-listen-endpoint = 0.0.0.0:19771
 
 

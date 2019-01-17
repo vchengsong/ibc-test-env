@@ -18,8 +18,8 @@ cluster_init(){
         echo "$logging_v"     > $path/$lName
     done
 
-    cp ../chain-first/staging/etc/eosio/node_00/genesis.json   staging/etc/eosio/node1/genesis.json
-    cp ../chain-second/staging/etc/eosio/node_00/genesis.json  staging/etc/eosio/node2/genesis.json
+    cp ../chain-eos/staging/etc/eosio/node_00/genesis.json   staging/etc/eosio/node1/genesis.json
+    cp ../chain-bos/staging/etc/eosio/node_00/genesis.json  staging/etc/eosio/node2/genesis.json
 }
 
 cluster_start(){

@@ -1,5 +1,17 @@
 
 
+
+### 首先编译4个库
+```
+/Code/github.com/EOSIO/eos
+/Code/github.com/boscore/bos
+/Code/github.com/boscore/ibc_plugin_eos
+/Code/github.com/boscore/ibc_plugin_eos
+```
+
+
+
+
 ``` 
 # step 1 in new shell
 cd ./clusters-ibc/cluster-one

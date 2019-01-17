@@ -22,6 +22,12 @@ create_account_by_pub_key c2 ${contract_token} ${token_c_pubkey}
 new_account c1 chengsong111
 new_account c2 chengsong111
 
+
+new_account c1 ${contract_rand}
+new_account c2 ${contract_rand}
+
+
+
 new_account c1 blacklist111
 new_account c2 blacklist111
 
@@ -67,13 +73,13 @@ update_schedule(){
     p=producer11
     if [ "$1" == "c2" ];then p=producer21 ;fi
 
-    schedule1="${p}1w ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
+    schedule1="${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j ${p}1k
+               ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t ${p}1u"
+
+    schedule2="${p}1t ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
                ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
 
-    schedule2="${p}1x ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
-               ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
-
-    schedule3="${p}1y ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
+    schedule3="${p}1u ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
                ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
 
     schedule4="${p}1z ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
@@ -94,11 +100,11 @@ update_schedule_v2(){
     schedule4="${p}1a ${p}1b ${p}1g ${p}1d ${p}1e ${p}1f "
 }
 
-update_schedule_v2 c1
-$cleos1 system voteproducer prods eosvoterbig1 ${schedule1} -p eosvoterbig1
+update_schedule c1
+$cleos1 system voteproducer prods eosvoterbig1 ${schedule3} -p eosvoterbig1
 
-update_schedule_v2 c2
-$cleos2 system voteproducer prods eosvoterbig1 ${schedule1} -p eosvoterbig1
+update_schedule c2
+$cleos2 system voteproducer prods eosvoterbig1 ${schedule3} -p eosvoterbig1
 
 return
 
