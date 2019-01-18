@@ -13,6 +13,7 @@ max-transaction-time = 500
 contracts-console = true
 
 plugin = eosio::ibc::ibc_plugin
+ibc-max-nodes-per-host = 5
 ibc-chain-contract = ibc2chain555
 ibc-token-contract = ibc2token555
 ibc-relay-name = ibc2relay555
@@ -93,7 +94,7 @@ p2p-peer-address = localhost:9903
 p2p-peer-address = localhost:9904
 
 
-#ibc-listen-endpoint = 0.0.0.0:6201
+ibc-listen-endpoint = 0.0.0.0:6201
 ibc-peer-address = 127.0.0.1:6101
 
 ibc-sidechain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
@@ -112,7 +113,7 @@ p2p-peer-address = localhost:9903
 p2p-peer-address = localhost:9904
 
 
-#ibc-listen-endpoint = 0.0.0.0:6202
+ibc-listen-endpoint = 0.0.0.0:6202
 ibc-peer-address = 127.0.0.1:6102
 
 ibc-sidechain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
@@ -130,7 +131,7 @@ p2p-peer-address = localhost:9903
 p2p-peer-address = localhost:9904
 
 
-#ibc-listen-endpoint = 0.0.0.0:6203
+ibc-listen-endpoint = 0.0.0.0:6203
 ibc-peer-address = 127.0.0.1:6103
 
 ibc-sidechain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906

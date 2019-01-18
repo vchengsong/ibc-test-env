@@ -2,7 +2,7 @@
 
 read -d '' genesis << EOF
 {
-  "initial_timestamp": "2019-01-17T09:41:12.000",
+  "initial_timestamp": "2019-01-18T10:56:05.000",
   "initial_key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
   "initial_configuration": {
     "max_block_net_usage": 1048576,
@@ -45,6 +45,7 @@ EOF
 
 read -d '' config_common << EOF
 enable-stale-production = true
+p2p-max-nodes-per-host = 50
 p2p-peer-address = localhost:9876
 plugin = eosio::chain_api_plugin
 plugin = eosio::producer_plugin

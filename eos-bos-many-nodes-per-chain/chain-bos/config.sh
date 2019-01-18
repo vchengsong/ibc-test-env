@@ -45,6 +45,7 @@ EOF
 
 read -d '' config_common << EOF
 enable-stale-production = true
+p2p-max-nodes-per-host = 50
 p2p-peer-address = localhost:9976
 plugin = eosio::chain_api_plugin
 plugin = eosio::producer_plugin
