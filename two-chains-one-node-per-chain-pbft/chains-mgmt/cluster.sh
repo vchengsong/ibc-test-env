@@ -29,7 +29,7 @@ cluster_start(){
     nohup ./programs/nodeos/nodeos -e -p eosio -d $node1data --config-dir $node1conf  \
         --plugin eosio::chain_api_plugin --plugin eosio::producer_plugin  \
         --plugin eosio::producer_api_plugin --plugin eosio::history_api_plugin  \
-        --plugin eosio::pbft_plugin  --contracts-console  --max-transaction-time 1000 --genesis-timestamp $now > node1.log &
+        --contracts-console --plugin eosio::pbft_plugin --max-transaction-time 1000 --genesis-timestamp $now > node1.log &
 
 #    tail -f node1.log
 #    return
