@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-repo=vonhenry/eosio.contracts
+repo=EOSIO/eosio.contracts
 #repo=boscore/bos.contracts
 
 CONTRACTS_DIR=/Code/github.com/${repo}/build

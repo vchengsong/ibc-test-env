@@ -2,13 +2,15 @@
 
 . env.sh
 
+IBC_CONTRACTS_DIR=/Code/github.com/boscore/ibc_contracts/build
+
 set_contracts(){
     cleos=cleos1 && if [ "$1" == "c2" ];then cleos=cleos2 ;fi
     echo ---- cluster 1 ----
-    ${!cleos} set contract ${contract_chain} ${CONTRACTS_DIR}/${contract_chain_folder} -x 1000 -p ${contract_chain}
+    ${!cleos} set contract ${contract_chain} ${IBC_CONTRACTS_DIR}/${contract_chain_folder} -x 1000 -p ${contract_chain}
     sleep 1
     echo && echo ---- cluster 2 ----
-    ${!cleos} set contract ${contract_token} ${CONTRACTS_DIR}/${contract_token_folder} -x 1000 -p ${contract_token}
+    ${!cleos} set contract ${contract_token} ${IBC_CONTRACTS_DIR}/${contract_token_folder} -x 1000 -p ${contract_token}
 }
 set_contracts c1
 set_contracts c2
@@ -27,7 +29,7 @@ init_contracts(){
     ${!cleos} set account permission ${contract_token} active '{"threshold": 1, "keys":[{"key":"'${token_c_pubkey}'", "weight":1}], "accounts":[{"permission":{"actor":"'${contract_token}'","permission":"eosio.code"},"weight":1}], "waits":[] }' owner -p ${contract_token}
 
     # --- ibc.chain ---
-    ${!cleos}  push action  ${contract_chain} setglobal '[{"lib_depth":50}]' -p ${contract_chain}
+    ${!cleos}  push action  ${contract_chain} setglobal '[{"lib_depth":85}]' -p ${contract_chain}
     ${!cleos}  push action  ${contract_chain} relay '["add","ibc2relay555"]' -p ${contract_chain}
     #cleos get table ${contract_chain} ${contract_chain} global
 }
@@ -79,6 +81,8 @@ get_token_table(){
     $cleos2 get table ${contract_token} ${contract_token} $1
 }
 
+
+#    get_chain_table global
 #    get_chain_table sections
 #    get_chain_table prodsches
 #    get_chain_table chaindb
@@ -99,7 +103,7 @@ get_chain_table_blkrtmkls(){
     $cleos2 get table ${contract_chain} ibc2relay555 blkrtmkls
 }
 
-get_chain_table_blkrtmkls
+#get_chain_table_blkrtmkls
 
 
 get_account(){
