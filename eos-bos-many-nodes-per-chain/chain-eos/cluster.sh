@@ -17,7 +17,7 @@ cluster_init(){
     echo "$logging" > $path/$lName
     echo "$genesis"     > $path/$gName
 
-    for i in `seq -w 00 25`; do
+    for i in `seq -w 00 50`; do
         path=staging/etc/eosio/node_$i
         mkdir -p $path
         c=config$i  && echo "${!c}" > $path/$cName
@@ -28,7 +28,7 @@ cluster_init(){
 }
 
 pnodes=1
-total_nodes=25
+total_nodes=50
 delay=1
 
 cluster_start(){

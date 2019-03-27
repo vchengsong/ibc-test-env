@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
-base_dir=/Code/github.com
 
-nodeos_repo_dir=${base_dir}/eosiosg/eos
-
-build=build
-
-nodeos=${nodeos_repo_dir}/${build}/programs/nodeos/nodeos
-eosio_launcher=${nodeos_repo_dir}/${build}/programs/eosio-launcher/eosio-launcher
 cleos=${nodeos_repo_dir}/${build}/programs/cleos/cleos
 
 now=`date -u +%Y-%m-%dT%H:%M:%S.000`
@@ -17,8 +10,10 @@ if [ -d ${program_dir} ]; then
     rm -rf ${program_dir}
 fi
 
-mkdir -p ${program_dir}/nodeos
-cp ${nodeos} ${program_dir}/nodeos/
+mkdir -p ${program_dir}/nodeos/eos
+mkdir -p ${program_dir}/nodeos/bos
+cp /Code/github.com/EOSIO/eos/build/programs/nodeos/nodeos   ${program_dir}/nodeos/eos
+cp /Code/github.com/eosiosg/eos/build/programs/nodeos/nodeos ${program_dir}/nodeos/bos
 
 
 

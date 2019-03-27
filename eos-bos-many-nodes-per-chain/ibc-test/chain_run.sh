@@ -64,9 +64,9 @@ create_register_producers(){
     done
 }
 create_register_producers c1 1 import
-#create_register_producers c1 2 import
+create_register_producers c1 2 import
 create_register_producers c2 1
-#create_register_producers c2 2
+create_register_producers c2 2
 
 
 update_schedule(){
@@ -76,11 +76,11 @@ update_schedule(){
     schedule1="${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j ${p}1k
                ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t ${p}1u"
 
-    schedule2="${p}1t ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
-               ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
+    schedule2="${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j ${p}1k ${p}1l ${p}1m
+               ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t ${p}1u ${p}1v ${p}1w"
 
-    schedule3="${p}1u ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
-               ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
+    schedule3="${p}2a ${p}2b ${p}2c ${p}2d ${p}2e ${p}2f ${p}2g ${p}2h ${p}2i ${p}2j ${p}2k
+               ${p}2l ${p}2m ${p}2n ${p}2o ${p}2p ${p}2q ${p}2r ${p}2s ${p}2t ${p}2u"
 
     schedule4="${p}1z ${p}1a ${p}1b ${p}1c ${p}1d ${p}1e ${p}1f ${p}1g ${p}1h ${p}1i ${p}1j
                ${p}1k ${p}1l ${p}1m ${p}1n ${p}1o ${p}1p ${p}1q ${p}1r ${p}1s ${p}1t"
