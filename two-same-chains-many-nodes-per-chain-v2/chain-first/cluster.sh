@@ -33,7 +33,7 @@ delay=1
 
 cluster_start(){
     $eosio_launcher -p $pnodes -n $total_nodes --nogen -d $delay --nodeos " "
-
+    echo "tail -f ./var/lib/node_00/stderr.txt"
     return
 
     sleep 5

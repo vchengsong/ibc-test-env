@@ -32,7 +32,7 @@ p2p-listen-endpoint = 0.0.0.0:19770
 ibc-listen-endpoint = 0.0.0.0:6001
 #ibc-peer-address = 127.0.0.1:6002
 
-ibc-sidechain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
+ibc-peer-chain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
 ibc-peer-private-key = EOS65jr3UsJi2Lpe9GbxDUmJYUpWeBTJNrqiDq2hYimQyD2kThfAE=KEY:5KHJeTFezCwFCYsaA4Hm2sqEXvxmD2zkgvs3fRT2KarWLiTwv71
 EOF
 
@@ -50,7 +50,7 @@ p2p-listen-endpoint = 0.0.0.0:19771
 #ibc-listen-endpoint = 0.0.0.0:6002
 ibc-peer-address = 127.0.0.1:6001
 
-ibc-sidechain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
+ibc-peer-chain-id = aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906
 ibc-peer-private-key = EOS65jr3UsJi2Lpe9GbxDUmJYUpWeBTJNrqiDq2hYimQyD2kThfAE=KEY:5KHJeTFezCwFCYsaA4Hm2sqEXvxmD2zkgvs3fRT2KarWLiTwv71
 EOF
 

@@ -23,36 +23,14 @@ cluster_init(){
 }
 
 cluster_start(){
-
     echo "starting node 1"
-    node1data=var/lib/node1/
-    node1conf=staging/etc/eosio/node1
-    genesis=staging/etc/eosio/node1/genesis.json
-
-    gen=""
-    if [ "$1" == "gen" ];then
-        gen="--genesis-json $genesis"
-    fi
-    nohup ./programs/nodeos/nodeos -d $node1data --config-dir $node1conf  $gen > node1.log &
-#   ./programs/nodeos/nodeos -d var/lib/node1/ --config-dir staging/etc/eosio/node1 --genesis-json staging/etc/eosio/node1/genesis.json
+   ./programs/nodeos/nodeos -d var/lib/node1/ --config-dir staging/etc/eosio/node1 --genesis-json staging/etc/eosio/node1/genesis.json
 #   ./programs/nodeos/nodeos -d var/lib/node1/ --config-dir staging/etc/eosio/node1
 
     echo "starting node 2"
-    node2data=var/lib/node2/
-    node2conf=staging/etc/eosio/node2
-    genesis=staging/etc/eosio/node2/genesis.json
-
-    gen=""
-    if [ "$1" == "gen" ];then
-        gen="--genesis-json $genesis"
-    fi
-    nohup ./programs/nodeos/nodeos -d $node2data --config-dir $node2conf  $gen > node2.log &
-#   ./programs/nodeos/nodeos -d var/lib/node2/ --config-dir staging/etc/eosio/node2 --genesis-json staging/etc/eosio/node2/genesis.json
+   ./programs/nodeos/nodeos -d var/lib/node2/ --config-dir staging/etc/eosio/node2 --genesis-json staging/etc/eosio/node2/genesis.json
 #   ./programs/nodeos/nodeos -d var/lib/node2/ --config-dir staging/etc/eosio/node2
-
-    echo "tail -f node1.log"
 }
-
 
 cluster_clear(){
     rm *.json *.dot *.ini *.log topology* 2>/dev/null
@@ -75,14 +53,11 @@ if [ "$#" -ne 1 ];then
 	exit 0
 fi
 
-
 case "$1"
 in
     "init"  )       cluster_init;;
-    "start-gen" )    cluster_start gen;;
     "start" )       cluster_start;;
     "clear" )       cluster_clear;;
-    *) echo "usage: cluster.sh init|start-gen|start|clear" ;;
+    *) echo "usage: cluster.sh init|start|clear" ;;
 esac
-
 

@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
 
-base_dir=/Code/github.com
+. ./../env.sh
 
-nodeos_repo_dir=${base_dir}/vonhenry/eos
-#nodeos_repo_dir=${base_dir}/boscore/bos
-
-build=build
-#build=cmake-build-debug
-
-nodeos=${nodeos_repo_dir}/${build}/programs/nodeos/nodeos
-eosio_launcher=${nodeos_repo_dir}/${build}/programs/eosio-launcher/eosio-launcher
-cleos=${nodeos_repo_dir}/${build}/programs/cleos/cleos
-
-now=`date -u +%Y-%m-%dT%H:%M:%S.000`
+        nodeos=${repo_dir}/build/programs/nodeos/nodeos
+eosio_launcher=${repo_dir}/build/programs/eosio-launcher/eosio-launcher
+         cleos=${repo_dir}/build/programs/cleos/cleos
 
 program_dir=./programs
 if [ -d ${program_dir} ]; then
@@ -22,7 +14,5 @@ fi
 mkdir -p ${program_dir}/nodeos
 cp ${nodeos} ${program_dir}/nodeos/
 
-
 cleos1='cleos -u http://127.0.0.1:8888'
 cleos2='cleos -u http://127.0.0.1:8889'
-
