@@ -50,7 +50,6 @@ plugin = eosio::chain_api_plugin
 plugin = eosio::producer_plugin
 max-transaction-time = 500
 contracts-console = true
-actor-blacklist = blacklist111
 EOF
 
 

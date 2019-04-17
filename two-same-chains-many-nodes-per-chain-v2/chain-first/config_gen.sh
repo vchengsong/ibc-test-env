@@ -2,7 +2,7 @@
 
 read -d '' genesis << EOF
 {
-  "initial_timestamp": "2019-04-17T00:42:22.000",
+  "initial_timestamp": "2019-04-17T01:33:48.000",
   "initial_key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
   "initial_configuration": {
     "max_block_net_usage": 1048576,
@@ -50,7 +50,6 @@ plugin = eosio::chain_api_plugin
 plugin = eosio::producer_plugin
 max-transaction-time = 500
 contracts-console = true
-actor-blacklist = blacklist111
 EOF
 
 

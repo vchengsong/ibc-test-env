@@ -5,7 +5,7 @@ sed 's/"initial_timestamp": ".*/"initial_timestamp": "'$now'",/g' ./config.sh > 
 . config_gen.sh
 
 cluster_init(){
-    cluster_clear
+    cluster_clear 2>/dev/null
 
     cName=config.ini
     lName=logging.json
@@ -28,7 +28,7 @@ cluster_init(){
 }
 
 pnodes=1
-total_nodes=7
+total_nodes=25
 delay=1
 
 cluster_start(){
@@ -47,7 +47,7 @@ cluster_start(){
 
     b5idbios=`$cleos -u http://127.0.0.1:8888 get block 5 | grep "^ *\"id\""`
 
-    for i in `seq -w 00 21`; do
+    for i in `seq -w 00 07`; do
         echo -- check node $i --
         sleep .3
         b5id=`$cleos -u http://127.0.0.1:88${i} get block 5 | grep "^ *\"id\""`
@@ -64,16 +64,6 @@ cluster_start(){
     echo "tail -f ./var/lib/node_00/stderr.txt"
 }
 
-
-cluster_down(){
-    $eosio_launcher -k 15
-}
-
-
-cluster_bounce(){
-    echo
-}
-
 cluster_clear(){
     $eosio_launcher -k 15 2>/dev/null
     rm *.json *.dot *.ini *.log topology* 2>/dev/null
@@ -84,7 +74,7 @@ cluster_clear(){
 
 
 if [ "$#" -ne 1 ];then
-	echo "usage: cluster.sh init|start|down|bounce|clear"
+	echo "usage: cluster.sh init|start|clear"
 	exit 0
 fi
 
@@ -93,11 +83,6 @@ case "$1"
 in
     "init"  )   cluster_init;;
     "start" )   cluster_start;;
-    "down"  )   cluster_down;;
-    "bounce")   cluster_bounce;;
     "clear" )   cluster_clear;;
-    "dump"  )   cluster_dump;;
-    *) echo "usage: cluster.sh init|start|down|bounce|clear|dump" ;;
+    *) echo "usage: cluster.sh init|start|clear" ;;
 esac
-
-
