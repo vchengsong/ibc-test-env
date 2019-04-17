@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
-repo_dir=/Code/github.com/vonhenry/eos
-#repo_dir=/Code/github.com/boscore/bos
+nodeos_repo_dir=/Code/github.com/EOSIO/eos
+#nodeos_repo_dir=/Code/github.com/boscore/bos
+
+
+ibc_plugin_repo_dir=/Code/github.com/vonhenry/eos
+
+
+
+

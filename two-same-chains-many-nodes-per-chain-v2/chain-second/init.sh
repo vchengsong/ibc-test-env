@@ -2,9 +2,9 @@
 
 . ./../env.sh
 
-        nodeos=${repo_dir}/build/programs/nodeos/nodeos
-eosio_launcher=${repo_dir}/build/programs/eosio-launcher/eosio-launcher
-         cleos=${repo_dir}/build/programs/cleos/cleos
+        nodeos=${nodeos_repo_dir}/build/programs/nodeos/nodeos
+eosio_launcher=${nodeos_repo_dir}/build/programs/eosio-launcher/eosio-launcher
+         cleos=${nodeos_repo_dir}/build/programs/cleos/cleos
 
 now=`date -u +%Y-%m-%dT%H:%M:%S.000`
 

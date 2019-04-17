@@ -2,9 +2,9 @@
 
 . ./../env.sh
 
-        nodeos=${repo_dir}/build/programs/nodeos/nodeos
-eosio_launcher=${repo_dir}/build/programs/eosio-launcher/eosio-launcher
-         cleos=${repo_dir}/build/programs/cleos/cleos
+        nodeos=${ibc_plugin_repo_dir}/build/programs/nodeos/nodeos
+eosio_launcher=${ibc_plugin_repo_dir}/build/programs/eosio-launcher/eosio-launcher
+         cleos=${ibc_plugin_repo_dir}/build/programs/cleos/cleos
 
 program_dir=./programs
 if [ -d ${program_dir} ]; then
