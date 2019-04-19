@@ -113,6 +113,9 @@ transfer(){
     $cleos2 transfer -f firstaccount ibc2token555 "10.0000 BOS" "chengsong111@eos notes infomation" -p firstaccount
 }
 
+# for i in `seq 10000`; do transfer && sleep 1 ;done
+
+
 oneway(){
     $cleos1 transfer -f firstaccount ibc2token555 "10.0000 EOS" "chengsong111@bos notes infomation" -p firstaccount
 }
